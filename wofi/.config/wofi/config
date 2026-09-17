@@ -1,0 +1,20 @@
+width=550
+height=280
+location=center
+
+prompt=  Pesquisar...
+allow_markup=true
+no_actions=true
+insensitive=true
+
+allow_images=true
+image_size=22
+
+filter_rate=100
+hide_scroll=true
+dynamic_lines=false
+lines=7
+
+gtk_dark=true
+
+layer=overlay

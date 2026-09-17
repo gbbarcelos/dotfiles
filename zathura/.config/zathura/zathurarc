@@ -1,0 +1,50 @@
+set guioptions s
+set statusbar-home-tilde true
+set selection-clipboard clipboard
+set adjust-open width
+set first-page-column 1
+set incremental-search false
+set font "JetBrains Mono 10"
+set window-title-basename true
+set recolor 'true'
+set recolor-keephue 'false'
+set recolor-reverse-video 'false'
+
+set default-bg '#262630'
+set completion-fg '#dee2d3'
+set completion-bg '#171110'
+set completion-group-fg '#828D6E'
+set completion-group-bg '#171110'
+set completion-highlight-fg '#171110'
+set completion-highlight-bg '#dee2d3'
+set inputbar-fg '#dee2d3'
+set inputbar-bg '#171110'
+set notification-fg '#dee2d3'
+set notification-bg '#171110'
+set notification-error-fg '#dee2d3'
+set notification-error-bg '#AE9853'
+set notification-warning-fg '#dee2d3'
+set notification-warning-bg '#AE9853'
+set statusbar-fg '#dee2d3'
+set statusbar-bg '#171110'
+
+set highlight-color rgba(252, 224, 88, 0.42)
+set highlight-fg rgba(0,0,0,1)             # solid black text
+set highlight-active-color rgba(255,0,0,0.3)  
+set recolor-lightcolor rgba(0,0,0,0)
+set recolor-darkcolor '#dee2d3'
+set render-loading-fg '#dee2d3'
+set render-loading-bg '#171110'
+set index-fg '#dee2d3'
+set index-bg '#171110'
+set index-active-fg '#171110'
+set index-active-bg '#dee2d3'
+
+map d toggle_page_mode
+map e follow
+map f navigate next
+map p goto top
+map [normal]     <C-l> reload
+map [fullscreen] <C-l> reload
+map <C--> zoom out
+map <C-+> zoom in

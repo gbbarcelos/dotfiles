@@ -1,0 +1,197 @@
+swaync style.css * {
+  all: unset;
+  font-family: 'JetBrainsMono Nerd Font', 'CodeNewRoman Nerd Font Mono', monospace;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.control-center {
+  background-color: rgba(13, 14, 22, 0.72);
+  border: 1px solid rgba(122, 162, 247, 0.15);
+  border-radius: 11px;
+  padding: 8px;
+  min-width: 340px;
+  max-width: 380px;
+}
+
+.control-center-list {
+  padding: 4px 0;
+}
+
+.top-action-buttons {
+  margin: 6px 8px 4px;
+  padding: 0;
+}
+
+.top-action-buttons button,
+.control-center button {
+  color: rgba(198, 205, 226, 0.55);
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.top-action-buttons button:hover,
+.control-center button:hover {
+  background-color: rgba(122, 162, 247, 0.10);
+  color: #c6cde2;
+}
+
+.control-center-dnd label {
+  color: rgba(198, 205, 226, 0.55);
+  font-size: 12px;
+}
+
+.control-center-dnd switch {
+  border-radius: 20px;
+  background-color: rgba(26, 28, 44, 0.80);
+  border: 1px solid rgba(122, 162, 247, 0.20);
+  min-width: 38px;
+  min-height: 20px;
+}
+
+.control-center-dnd switch:checked {
+  background-color: rgba(247, 118, 142, 0.25);
+  border-color: rgba(247, 118, 142, 0.40);
+}
+
+.control-center-dnd switch slider {
+  background-color: #7aa2f7;
+  border-radius: 50%;
+  min-width: 16px;
+  min-height: 16px;
+  margin: 2px;
+}
+
+.control-center-dnd switch:checked slider {
+  background-color: #f7768e;
+}
+
+.notification-row {
+  margin: 0 4px 6px;
+}
+
+.notification {
+  background-color: rgba(26, 28, 44, 0.60);
+  border: 1px solid rgba(122, 162, 247, 0.12);
+  border-radius: 8px;
+  padding: 10px 12px;
+  transition: background-color 0.12s ease;
+}
+
+.notification:hover {
+  background-color: rgba(26, 28, 44, 0.80);
+  border-color: rgba(122, 162, 247, 0.22);
+}
+
+.notification-content {
+  padding: 0;
+}
+
+.app-name {
+  color: #bb9af7;
+  font-size: 11px;
+  margin-bottom: 3px;
+}
+
+.summary {
+  color: #c6cde2;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.body {
+  color: rgba(198, 205, 226, 0.60);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.time {
+  color: rgba(198, 205, 226, 0.35);
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+.notification-action-button {
+  color: rgba(198, 205, 226, 0.65);
+  font-size: 11px;
+  padding: 4px 10px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid rgba(122, 162, 247, 0.15);
+  background-color: rgba(122, 162, 247, 0.06);
+  transition: background-color 0.12s ease;
+}
+
+.notification-action-button:hover {
+  background-color: rgba(122, 162, 247, 0.14);
+  color: #c6cde2;
+}
+
+.close-button {
+  color: rgba(198, 205, 226, 0.35);
+  font-size: 12px;
+  border-radius: 4px;
+  padding: 2px 5px;
+  transition: color 0.12s ease, background-color 0.12s ease;
+}
+
+.close-button:hover {
+  color: #f7768e;
+  background-color: rgba(247, 118, 142, 0.12);
+}
+
+.notification-group-collapsed-summary {
+  background-color: rgba(122, 162, 247, 0.10);
+  border: 1px solid rgba(122, 162, 247, 0.20);
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin: 0 4px 4px;
+  color: #7aa2f7;
+  font-size: 11px;
+}
+
+.notification-group-collapsed-summary:hover {
+  background-color: rgba(122, 162, 247, 0.16);
+}
+
+.notification-group>.notification-row:nth-child(n+3) {
+  /* empilha visualmente com deslocamento, sem esconder */
+  margin-top: -6px;
+  opacity: 0.70;
+  transform: scale(0.97);
+}
+
+.notification-group>.notification-row:nth-child(n+4) {
+  margin-top: -8px;
+  opacity: 0.45;
+  transform: scale(0.94);
+}
+
+.notification-group>.notification-row:nth-child(n+5) {
+  opacity: 0;
+  margin: 0;
+  min-height: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+.notification-popup {
+  background-color: rgba(13, 14, 22, 0.76);
+  border: 1px solid rgba(122, 162, 247, 0.18);
+  border-radius: 10px;
+  padding: 12px 14px;
+  /* compacto, sem expandir demais */
+  min-width: 280px;
+  max-width: 360px;
+  margin: 8px;
+}
+
+.notification-popup .stack-label {
+  color: #7aa2f7;
+  font-size: 10px;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(122, 162, 247, 0.10);
+}

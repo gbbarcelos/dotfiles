@@ -1,0 +1,157 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 40,
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "spacing": 9,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock",
+        "custom/swaync",
+        "idle_inhibitor"
+    ],
+    "modules-right": [
+        "custom/recorder",
+        "tray",
+        "pulseaudio",
+        "battery",
+        "bluetooth",
+        "network"
+    ],
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": false,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": "○",
+            "urgent": ""
+        },
+        "persistent-workspaces": {
+            "*": 4
+        },
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1"
+    },
+    "clock": {
+        "format": "  {:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%A, %d %b}"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "network": {
+        "format-wifi": "{essid} {icon}",
+        "format-ethernet": "{ipaddr}/{cidr}   ",
+        "format-disconnected": "",
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
+        "tooltip-format-wifi": "{ifname}  {signalStrength}%",
+        "tooltip-format-ethernet": "{ifname} via {gwaddr}  ",
+        "tooltip-format-disconnected": "Desconectado",
+        "interval": 5,
+        "on-click": "wifi-manager --toggle"
+    },
+    "bluetooth": {
+        "on-click": "wifi-manager --toggle",
+        "format-off": "󰂲",
+        "format-on": "󰂯",
+        "format-disabled": "",
+        "format-connected": "{num_connections} 󰂱",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_battery_percentage}%"
+    },
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        // "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "󰋋",
+            "portable": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+    "battery": {
+        "states": {
+            "full": 100,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% {icon}󱐋",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "tooltip-format": "{capacity}%  ·  {timeTo}"
+    },
+    "tray": {
+        "icon-size": 17,
+        "spacing": 10,
+        "show-passive-items": false
+    },
+    "custom/swaync": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󱅫",
+            "none": "",
+            "dnd-notification": "󰂛",
+            "dnd-none": "󰂛"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+    "custom/recorder": {
+        "exec": "[ -f /tmp/wf-recorder.pid ] && echo '{\"text\": \"⏺\", \"class\": \"recording\"}' || echo '{\"text\": \"\", \"class\": \"\"}'",
+        "return-type": "json",
+        "interval": 2,
+        "on-click": "~/dotfiles/scripts/.config/scripts/screenshot.sh stop-rec"
+    }
+}

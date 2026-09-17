@@ -1,0 +1,78 @@
+@import "colors.css";
+* {
+    border: none; border-radius: 0; margin: 0px 3px;
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", monospace;
+    font-size: 14px; min-height: 0; padding: 0; 
+}
+
+window#waybar {
+    background-color: @bg; color: @text;
+    transition: background-color 0.25s ease;
+}
+.modules-left   { padding: 0 0; }
+.modules-center { padding: 0 2px; }
+.modules-right  { padding: 0 4px; }
+#workspaces { margin: 0 2px; }
+#workspaces button {
+    padding: 1px 4px;
+    color: @text-dim;
+    background: transparent;
+    border-radius: 6px;
+    transition: all 0.18s ease;
+    font-size: 15px;
+}
+#workspaces button:hover { background: @hover-bg; border: 1px solid rgba(198, 205, 226, 0.12); }
+
+
+#clock {
+    color: @text;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 0 3px;
+}
+
+#wireplumber,
+#tray,
+#network,
+#battery,
+#custom-swaync,
+#idle_inhibitor {
+    border-radius: 7px;
+    padding: 0 5px; margin: 4px 2px;
+    color: @text; transition: all 0.18s ease;
+}
+
+#wireplumber:hover,
+#network:hover,
+#battery:hover,
+#custom-swaync:hover,
+#idle_inhibitor:hover { background: @hover-bg; border: 1px solid rgba(198, 205, 226, 0.14); }
+
+#custom-swaync.notification { color: @accent; }
+#custom-swaync.dnd-notification,
+#custom-swaync.dnd-none { color: @text-dim; }
+
+#battery.charging { color: @text; }
+#battery.warning:not(.charging) { color: @yellow; }
+#battery.critical:not(.charging) { color: @red; animation: blink 1s linear infinite alternate; }
+#battery.full { color: @text; }
+
+#network.disconnected { color: @text-dim; }
+
+#tray { padding: 0 5px; }
+#tray > .passive { -gtk-icon-effect: dim; }
+#tray > .needs-attention { -gtk-icon-effect: highlight; background: @critical-bg; }
+
+#custom-recorder.recording {
+    color: @red;
+}
+
+tooltip {
+    background: @tooltip-bg; padding: 6px 10px;
+    border: 1px solid @border; border-radius: 8px;
+    color: @text; font-size: 12px;
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", monospace;
+}
+tooltip label { color: @text; }
+
+@keyframes blink { to { opacity: 0.45; } }

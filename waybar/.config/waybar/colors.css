@@ -1,0 +1,17 @@
+@define-color green            #9ece6a;
+@define-color yellow           #e0af68;
+@define-color red              #f7768e;
+@define-color text             #c6cde2;
+@define-color text-dim         rgba(198, 205, 226, 0.55);
+@define-color accent           #7aa2f7;
+@define-color accent2          #bb9af7;
+@define-color hover-bg         rgba(198, 205, 226, 0.07);
+@define-color bg               rgba(13, 14, 22, 0.70);
+@define-color background       rgba(13, 14, 22, 0.70);
+@define-color surface          rgba(26, 28, 44, 0.72);
+@define-color border           rgba(122, 162, 247, 0.14);
+@define-color active-bg        rgba(122, 162, 247, 0.15);
+@define-color warning-bg       rgba(224, 175, 104, 0.12);
+@define-color critical-bg      rgba(247, 118, 142, 0.15);
+@define-color power-hover-bg   rgba(247, 118, 142, 0.14);
+@define-color tooltip-bg       rgba(13, 14, 22, 0.94);

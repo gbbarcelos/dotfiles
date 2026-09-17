@@ -1,0 +1,74 @@
+@define-color text      #c6cde2;
+@define-color text-dim  rgba(198, 205, 226, 0.55);
+@define-color accent    #7aa2f7;
+@define-color red       #f7768e;
+@define-color mauve     #bb9af7;
+@define-color lavender  #7aa2f7;
+
+* {
+    all: unset;
+    font-family: 'JetBrainsMono Nerd Font', 'CodeNewRoman Nerd Font Mono', monospace;
+    font-size: 16px; text-shadow: none;
+    outline: none; border: none;
+    background-color: transparent;
+}
+window {
+    all: unset;
+    margin: 0px; padding: 0px;
+    border-radius: 11px;
+    background-color: rgba(13, 14, 22, 0.82);
+    border: 1px solid rgba(122, 162, 247, 0.15);
+}
+
+#outer-box { border: none; overflow: hidden;}
+#inner-box { margin: 2px; padding: 6px; border: none;}
+#scroll { margin: 0; padding: 12px 24px 24px; border: none; }
+
+#input {
+    all: unset;
+    margin: 16px 20px 8px; padding: 12px 16px;
+    border: none; border-radius: 8px; outline: none;
+    color: @text; font-size: 15px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+    background-color: rgba(26, 28, 44, 0.70);
+}
+#input image {
+    color: @accent;
+    border: none; padding-right: 10px;
+    min-width: 18px; min-height: 18px;
+}
+#input * { border: none; outline: none; }
+#input:focus { outline: none; border: none; }
+
+#text {
+    margin: 2px 0;
+    overflow: hidden; text-overflow: ellipsis; 
+    border: none; outline: none;
+    color: @text;
+}
+
+#entry {
+    border: 1px solid transparent;
+    margin: 0px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.12s ease;
+    display: flex;
+    min-width: 0; 
+}
+#entry image,
+#entry > image {
+    all: unset; -gtk-icon-size: 22px; opacity: 1;
+    min-width:  22px; min-height: 22px;
+    padding-right: 10px;
+}
+#entry arrow { border: none; color: @lavender; }
+#entry:selected {
+    background-color: rgba(122, 162, 247, 0.12);
+    border: 1px solid rgba(122, 162, 247, 0.20);
+    border-radius: 8px; box-shadow: none;
+}
+#entry:selected #text { color: @mauve; font-weight: 600; }
+#entry:selected image,
+#entry:selected > image { opacity: 1; }
+#entry:drop(active) { background-color: rgba(122, 162, 247, 0.20) !important; }

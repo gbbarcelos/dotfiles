@@ -1,0 +1,8 @@
+*.log
+*.pid
+*.swp
+*.bak
+.DS_Store
+
+code/.config/Code/User/globalStorage/
+code/.config/Code/User/workspaceStorage/
