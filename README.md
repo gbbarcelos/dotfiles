@@ -101,13 +101,19 @@ cd ~/dotfiles
 stow -t ~ code hypr kitty mimeapps nvim scripts starship swaync waybar wifi-manager wofi yazi zathura zshrc .zprofile
 ```
 
-### 4. Definir o Zsh como shell padrão
+### 4. Tornar os scripts executáveis
+
+```bash
+chmod +x ~/.config/scripts/*.sh
+```
+
+### 5. Definir o Zsh como shell padrão
 
 ```bash
 chsh -s $(which zsh)
 ```
 
-### 5. Configurar o TLP (gerenciamento de energia)
+### 6. Configurar o TLP (gerenciamento de energia)
 
 > Caso use desktop, apenas pule esta etapa.
 

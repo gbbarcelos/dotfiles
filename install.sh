@@ -45,6 +45,9 @@ echo "==> Criando symlinks com stow"
 cd "$DOTFILES_DIR"
 stow -t "$HOME" "${PACKAGES[@]}"
 
+echo "==> Tornando os scripts executáveis"
+chmod +x "$HOME"/.config/scripts/*.sh
+
 echo "==> Definindo o Zsh como shell padrão"
 if [[ "$SHELL" != *zsh ]]; then
     chsh -s "$(command -v zsh)"
