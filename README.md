@@ -15,7 +15,7 @@ Contém, também, um arquivo para instalação automática de todas as aplicaç�
 | `zshrc/` | Zsh | Shell (`.zshrc`) |
 | `.zprofile/` | Zsh (login) | `.zprofile` inicia o Hyprland automaticamente sem a tela de login |
 | `starship/` | Starship | Prompt do shell (`starship.toml`) |
-| `nvim/` | Neovim | Editor (`init.lua`) |
+| `nvim/` | Neovim | Editor baseado no [LazyVim](https://www.lazyvim.org/) (`lua/config/`, `lua/plugins/`) |
 | `code/` | VS Code | `settings.json` |
 | `yazi/` | Yazi | Gerenciador de arquivos no terminal (`yazi.toml`, `theme.toml`, `keymap.toml`, `package.toml`) |
 | `zathura/` | Zathura | Visualizador de PDF (`zathurarc`) |
