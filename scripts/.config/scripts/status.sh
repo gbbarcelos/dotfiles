@@ -9,6 +9,10 @@ RED='\033[31m'
 RESET='\033[0m'
 
 
+sep() {
+    printf '%b%s%b\n' "$CYAN" "────────────────────────────" "$RESET"
+}
+
 header() {
     printf '\n%b%s%b\n' "$BOLD$CYAN" "$1" "$RESET"
     sep
