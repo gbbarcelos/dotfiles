@@ -23,7 +23,7 @@ transparency = 0.9                         #0-1, zero is transparent(stupid, ikr
 
 [persistence]
 first_run = false
-last_tab = "envars"
+last_tab = "win-rules"
 
 [[theme]]
 name = "Catppuccin Mocha"
