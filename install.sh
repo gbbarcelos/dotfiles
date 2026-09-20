@@ -14,7 +14,7 @@ sudo pacman -S --needed --noconfirm \
     xdg-desktop-portal xdg-desktop-portal-hyprland upower \
     linux-firmware "$UCODE" \
     ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-nerd-fonts-symbols \
-    grim slurp wf-recorder brightnessctl playerctl wl-clipboard
+    grim slurp wf-recorder hyprsunset brightnessctl playerctl wl-clipboard
 
 echo "==> Habilitando serviços essenciais, como rede, bluetooth e energia"
 sudo systemctl enable --now NetworkManager.service iwd.service bluetooth.service upower.service
