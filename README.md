@@ -1,12 +1,11 @@
 # dotfiles
 
-![pré-visualização do setup](imgs/screenshot_2026-09-22_12-18-32.png)
-![pré-visualização do setup](imgs/screenshot_2026-09-22_12-23-16.png)
-![pré-visualização do setup](imgs/screenshot_2026-09-22_12-25-29.png)
-![pré-visualização do setup](imgs/screenshot_2026-09-22_12-26-02.png)
-
 Configurações do meu SO de Arch Linux e Hyprland para notebook, com condições específicas para economia de energia e visualização detalhada da bateria e pastas estruturadas como pacotes do [GNU Stow](https://www.gnu.org/software/stow/) para uso de symlinks.
 Contém, também, um arquivo para instalação automática de todas as aplicações e configurações do sistema. Para maior conveniência, especifiquei tudo abaixo, além de instruções para instalação manual. Ao final, independentemente de qual instalação for escolhida, certifique-se de trocar o caminho de algumas coisas, como dos wallpapers.
+
+![pré-visualização do setup](imgs/screenshot_2026-09-22_12-18-32.png)
+![pré-visualização do setup](imgs/screenshot_2026-09-22_12-23-16.png)
+![pré-visualização do setup](imgs/screenshot_2026-09-22_12-26-02.png)
 
 ## Programas configurados
 
