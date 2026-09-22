@@ -41,3 +41,4 @@ new_tmux () {
 }
 
 alias tm=new_tmux
+alias status="$HOME/dotfiles/scripts/.config/scripts/status.sh"

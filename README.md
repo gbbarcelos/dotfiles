@@ -11,15 +11,15 @@ Contém, também, um arquivo para instalação automática de todas as aplicaç�
 
 | Pasta | Programa | Descrição |
 | --- | --- | --- |
-| `hypr/` | [Hyprland](https://hyprland.org/) | Wayland: `hyprland.conf`, `hyprlock.conf`, `hypridle.conf`, `hyprsettings.toml` e módulos por função (`animations`, `env`, `input`, `monitor`, `windowrules`, `autostart`, `general`, `keybinds`) |
-| `waybar/` | Waybar | Barra de tarefas (`config.jsonc`, `style.css`, `colors.css`) |
+| `hypr/` | [Hyprland](https://hyprland.org/) | Wayland: `hyprland.conf`, `hyprlock.conf`, `hypridle.conf`, `hyprsettings.toml` e módulos por função (`animations`, `env`, `input`, `monitor`, `windowrules`, `autostart`, `general`, `keybinds`). Inicia o `hyprsunset` no autostart e define atalhos como `Super + N` (abre o Neovim no Kitty) e `Super + Shift + R` (reinicia a Waybar) |
+| `waybar/` | Waybar | Barra de tarefas (`config.jsonc`, `style.css`, `colors.css`). Inclui o módulo `backlight` (scroll do mouse ajusta o brilho) e o `custom/nightlight` (clique alterna o filtro de luz azul do `hyprsunset`) |
 | `wofi/` | Wofi | Launcher de aplicativos (`config`, `style.css`) |
 | `swaync/` | SwayNC | Central de notificações (`style.css`) |
 | `kitty/` | Kitty | Emulador de terminal (`kitty.conf`) |
 | `zshrc/` | Zsh | Shell (`.zshrc`) |
 | `.zprofile/` | Zsh (login) | `.zprofile` inicia o Hyprland automaticamente sem a tela de login |
 | `starship/` | Starship | Prompt do shell (`starship.toml`) |
-| `nvim/` | Neovim | Editor (`init.lua`) |
+| `nvim/` | Neovim | Editor baseado no [LazyVim](https://www.lazyvim.org/) (`lua/config/`, `lua/plugins/`). Explorer do `snacks.nvim` com largura fixa de 28 colunas (`plugins/explorer.lua`) |
 | `code/` | VS Code | `settings.json` |
 | `yazi/` | Yazi | Gerenciador de arquivos no terminal (`yazi.toml`, `theme.toml`, `keymap.toml`, `package.toml`) |
 | `zathura/` | Zathura | Visualizador de PDF (`zathurarc`) |
@@ -41,6 +41,7 @@ Estes pacotes estão instalados e são necessários para o funcionamento básico
 | `upower` | Energia | Fornece o status de bateria usado por Waybar e outras integrações de energia |
 | `ttf-jetbrains-mono-nerd`, `ttf-cascadia-code-nerd`, `ttf-cascadia-mono-nerd`, `ttf-nerd-fonts-symbols` | Fontes | Nerd Fonts usadas para os ícones da Waybar, Kitty, Wofi e Hyprlock |
 | `grim`, `slurp`, `wf-recorder`, `brightnessctl`, `playerctl`, `wl-clipboard` | Dependências do `screenshot.sh` | Captura de tela e região, gravação de tela, cópia para a área de transferência, controle de brilho e mídia |
+| `hyprsunset` | Filtro de luz azul | Iniciado no autostart do Hyprland e controlado pelo módulo `custom/nightlight` da Waybar |
 | `wayfreeze` (AUR) | Dependência do `screenshot.sh` | Congela a tela durante o print por região, sendo usado só pelas funções `screenshot_region`/`record_region` |
 
 ## Aplicativos de uso pessoal (não essenciais)
@@ -87,7 +88,7 @@ sudo pacman -S --needed \
     bluez bluez-utils polkit hyprpolkitagent \
     xdg-desktop-portal xdg-desktop-portal-hyprland upower \
     ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-nerd-fonts-symbols \
-    grim slurp wf-recorder brightnessctl playerctl wl-clipboard
+    grim slurp wf-recorder hyprsunset brightnessctl playerctl wl-clipboard
 yay -S --needed visual-studio-code-bin wayfreeze
 sudo systemctl enable --now NetworkManager.service iwd.service bluetooth.service upower.service
 ```
@@ -105,13 +106,19 @@ cd ~/dotfiles
 stow -t ~ code hypr kitty mimeapps nvim scripts starship swaync waybar wifi-manager wofi yazi zathura zshrc .zprofile
 ```
 
-### 4. Definir o Zsh como shell padrão
+### 4. Tornar os scripts executáveis
+
+```bash
+chmod +x ~/.config/scripts/*.sh
+```
+
+### 5. Definir o Zsh como shell padrão
 
 ```bash
 chsh -s $(which zsh)
 ```
 
-### 5. Configurar o TLP (gerenciamento de energia)
+### 6. Configurar o TLP (gerenciamento de energia)
 
 > Caso use desktop, apenas pule esta etapa.
 

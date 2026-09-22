@@ -12,12 +12,14 @@
     "modules-center": [
         "clock",
         "custom/swaync",
-        "idle_inhibitor"
+        "idle_inhibitor",
+        "custom/nightlight"
     ],
     "modules-right": [
         "custom/recorder",
         "tray",
         "pulseaudio",
+        "backlight",
         "battery",
         "bluetooth",
         "network"
@@ -79,16 +81,20 @@
     "backlight": {
         "format": "{percent}% {icon}",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "tooltip": false
     },
     "pulseaudio": {
         "format": "{volume}% {icon} {format_source}",
@@ -147,6 +153,13 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
+    },
+    "custom/nightlight": {
+        "exec": "t=$(hyprctl hyprsunset temperature 2>/dev/null); if [ \"${t:-6500}\" -lt 6000 ]; then echo '{\"text\": \"󰌵\", \"tooltip\": \"Filtro de luz azul: ligado\", \"class\": \"active\"}'; else echo '{\"text\": \"󰌶\", \"tooltip\": \"Filtro de luz azul: desligado\", \"class\": \"\"}'; fi",
+        "return-type": "json",
+        "signal": 8,
+        "interval": 30,
+        "on-click": "if [ \"$(hyprctl hyprsunset temperature)\" -lt 6000 ]; then hyprctl hyprsunset temperature 6500; else hyprctl hyprsunset temperature 3000; fi; pkill -RTMIN+8 waybar"
     },
     "custom/recorder": {
         "exec": "[ -f /tmp/wf-recorder.pid ] && echo '{\"text\": \"⏺\", \"class\": \"recording\"}' || echo '{\"text\": \"\", \"class\": \"\"}'",

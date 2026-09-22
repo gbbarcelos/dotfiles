@@ -14,7 +14,7 @@ sudo pacman -S --needed --noconfirm \
     xdg-desktop-portal xdg-desktop-portal-hyprland upower \
     linux-firmware "$UCODE" \
     ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-nerd-fonts-symbols \
-    grim slurp wf-recorder brightnessctl playerctl wl-clipboard
+    grim slurp wf-recorder hyprsunset brightnessctl playerctl wl-clipboard
 
 echo "==> Habilitando serviços essenciais, como rede, bluetooth e energia"
 sudo systemctl enable --now NetworkManager.service iwd.service bluetooth.service upower.service
@@ -44,6 +44,9 @@ fi
 echo "==> Criando symlinks com stow"
 cd "$DOTFILES_DIR"
 stow -t "$HOME" "${PACKAGES[@]}"
+
+echo "==> Tornando os scripts executáveis"
+chmod +x "$HOME"/.config/scripts/*.sh
 
 echo "==> Definindo o Zsh como shell padrão"
 if [[ "$SHELL" != *zsh ]]; then

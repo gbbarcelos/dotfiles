@@ -35,8 +35,10 @@ window#waybar {
 #tray,
 #network,
 #battery,
+#backlight,
 #custom-swaync,
-#idle_inhibitor {
+#idle_inhibitor,
+#custom-nightlight {
     border-radius: 7px;
     padding: 0 5px; margin: 4px 2px;
     color: @text; transition: all 0.18s ease;
@@ -45,8 +47,10 @@ window#waybar {
 #wireplumber:hover,
 #network:hover,
 #battery:hover,
+#backlight:hover,
 #custom-swaync:hover,
-#idle_inhibitor:hover { background: @hover-bg; border: 1px solid rgba(198, 205, 226, 0.14); }
+#idle_inhibitor:hover,
+#custom-nightlight:hover { background: @hover-bg; border: 1px solid rgba(198, 205, 226, 0.14); }
 
 #custom-swaync.notification { color: @accent; }
 #custom-swaync.dnd-notification,
@@ -62,6 +66,9 @@ window#waybar {
 #tray { padding: 0 5px; }
 #tray > .passive { -gtk-icon-effect: dim; }
 #tray > .needs-attention { -gtk-icon-effect: highlight; background: @critical-bg; }
+
+#custom-nightlight { color: @text-dim; }
+#custom-nightlight.active { color: @yellow; }
 
 #custom-recorder.recording {
     color: @red;
