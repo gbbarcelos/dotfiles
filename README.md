@@ -11,7 +11,7 @@ Contém, também, um arquivo para instalação automática de todas as aplicaç�
 
 | Pasta | Programa | Descrição |
 | --- | --- | --- |
-| `hypr/` | [Hyprland](https://hyprland.org/) | Wayland: `hyprland.conf`, `hyprlock.conf`, `hypridle.conf`, `hyprsettings.toml` e módulos por função (`animations`, `env`, `input`, `monitor`, `windowrules`, `autostart`, `general`, `keybinds`). Inicia o `hyprsunset` no autostart e define atalhos como `Super + N` (abre o Neovim no Kitty) e `Super + Shift + R` (reinicia a Waybar) |
+| `hypr/` | [Hyprland](https://hyprland.org/) | Wayland: `hyprland.conf`, `hyprlock.conf`, `hypridle.conf` e módulos por função (`animations`, `env`, `input`, `monitor`, `windowrules`, `autostart`, `general`, `keybinds`). Inicia o `hyprsunset` no autostart e define atalhos como `Super + N` (abre o Neovim no Kitty) e `Super + Shift + R` (reinicia a Waybar) |
 | `waybar/` | Waybar | Barra de tarefas (`config.jsonc`, `style.css`, `colors.css`). Inclui o módulo `backlight` (scroll do mouse ajusta o brilho) e o `custom/nightlight` (clique alterna o filtro de luz azul do `hyprsunset`) |
 | `wofi/` | Wofi | Launcher de aplicativos (`config`, `style.css`) |
 | `swaync/` | SwayNC | Central de notificações (`style.css`) |
