@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-SAVE_DIR="${SCREENSHOT_DIR:-$HOME/imagens/screenshots}"
-SAVE_DIR_REC="${RECORDING_DIR:-$HOME/videos/capturas}"
+SAVE_DIR="${SCREENSHOT_DIR:-$HOME/Imagens/screenshots}"
+SAVE_DIR_REC="${RECORDING_DIR:-$HOME/Vídeos/capturas}"
 DATE_FMT="%Y-%m-%d_%H-%M-%S"
 
 mkdir -p "$SAVE_DIR" "$SAVE_DIR_REC"
