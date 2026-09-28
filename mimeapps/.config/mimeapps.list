@@ -1,6 +1,0 @@
-[Added Associations]
-text/x-typst=kitty-2.desktop;
-
-[Default Applications]
-text/x-typst=kitty-2.desktop;
-x-scheme-handler/claude-cli=claude-code-url-handler.desktop
