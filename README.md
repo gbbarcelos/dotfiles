@@ -29,16 +29,12 @@ Contém, também, um arquivo para instalação automática de todas as aplicaç�
 
 ## Programas essenciais do sistema (sem configuração versionada)
 
-Estes pacotes estão instalados e são necessários para o funcionamento básico do sistema, tais como rede, som, fontes com ícones, etc., mas não têm arquivo de configuração próprio neste repositório.
+Estes pacotes estão instalados e são necessários para o funcionamento básico do sistema, tais como bluetooth, autenticação gráfica, fontes com ícones, etc., mas não têm arquivo de configuração próprio neste repositório.
 
 | Pacote(s) | Papel | Por que é imprescindível |
 | --- | --- | --- |
-| `networkmanager`, `iwd` | Rede/Wi-Fi | O `wifi-manager` depende do backend de rede estar ativo |
-| `pipewire`, `pipewire-pulse`, `pipewire-alsa`, `wireplumber` | Áudio | Stack de áudio do sistema |
 | `bluez`, `bluez-utils` | Bluetooth | Daemon e utilitários de Bluetooth (`bluetooth.service`) |
 | `polkit`, `hyprpolkitagent` | Autenticação gráfica | Sem um agente Polkit, prompts de autenticação gráfica (instalar pacotes via GUI, montar discos, etc.) falham |
-| `xdg-desktop-portal`, `xdg-desktop-portal-hyprland` | Portais Wayland | Necessário para compartilhamento de tela e seletor de arquivos nativo |
-| `upower` | Energia | Fornece o status de bateria usado por Waybar e outras integrações de energia |
 | `ttf-jetbrains-mono-nerd`, `ttf-cascadia-code-nerd`, `ttf-cascadia-mono-nerd`, `ttf-nerd-fonts-symbols` | Fontes | Nerd Fonts usadas para os ícones da Waybar, Kitty, Wofi e Hyprlock |
 | `grim`, `slurp`, `wf-recorder`, `brightnessctl`, `playerctl`, `wl-clipboard` | Dependências do `screenshot.sh` | Captura de tela e região, gravação de tela, cópia para a área de transferência, controle de brilho e mídia |
 | `hyprsunset` | Filtro de luz azul | Iniciado no autostart do Hyprland e controlado pelo módulo `custom/nightlight` da Waybar |
@@ -52,7 +48,6 @@ Instalados na máquina e usados no dia a dia, mas sem configuração versionada 
 | --- | --- | --- |
 | `firefox`, `firefox-i18n-pt-br` | Navegador | Maioral 1, com tradução para pt-BR |
 | `discord` | Comunicação | Maioral 2 |
-| `steam` | Jogos | Maioral 3 |
 | `mpv` | Mídia | Player de vídeo e áudio |
 | `dolphin` | Arquivos | Gerenciador de arquivos gráfico |
 | `pavucontrol` | Áudio | Interface gráfica do volume por aplicativo |
@@ -64,8 +59,6 @@ Instalados na máquina e usados no dia a dia, mas sem configuração versionada 
 | `htop` | Sistema | Monitor de processos no terminal |
 | `imagemagick` | Imagens | Manipulação de imagens via linha de comando (importante pro Yazi!) |
 
-> `steam` e as libs `lib32-*` (Nvidia, Vulkan) vêm do repositório `multilib`, que precisa estar habilitado em `/etc/pacman.conf` antes de instalar (`sudo sed -i '/\[multilib\]/,/Include/s/^#//' /etc/pacman.conf && sudo pacman -Sy`).
-
 ## Instalação
 
 ### Automática
@@ -74,7 +67,7 @@ Instalados na máquina e usados no dia a dia, mas sem configuração versionada 
 git clone https://github.com/gbbarcelos/dotfiles ~/dotfiles
 cd ~/dotfiles
 ./install.sh # só o básico
-./install.sh --apps # básicão + aplicativos de uso pessoal, tipo o firefox, discord e steam
+./install.sh --apps # básicão + aplicativos de uso pessoal, tipo o firefox e o discord
 ```
 
 O script instala os pacotes, cria os symlinks via stow, define o Zsh como shell padrão e habilita o TLP. Os passos abaixo são o que ele executa, para quem preferir rodar manualmente ou adaptar.
@@ -84,9 +77,7 @@ O script instala os pacotes, cria os symlinks via stow, define o Zsh como shell 
 ```bash
 sudo pacman -S --needed \
     hyprland waybar wofi swaync kitty zsh starship neovim yazi zathura jq tlp \
-    networkmanager iwd pipewire pipewire-pulse pipewire-alsa wireplumber \
     bluez bluez-utils polkit hyprpolkitagent \
-    xdg-desktop-portal xdg-desktop-portal-hyprland upower \
     ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-nerd-fonts-symbols \
     grim slurp wf-recorder hyprsunset brightnessctl playerctl wl-clipboard
 yay -S --needed visual-studio-code-bin wayfreeze

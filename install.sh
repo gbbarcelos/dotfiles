@@ -6,13 +6,17 @@ WITH_APPS=false
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PACKAGES=(code hypr kitty mimeapps nvim scripts starship swaync waybar wifi-manager wofi yazi zathura zshrc .zprofile)
 
+case "$(grep -m1 vendor_id /proc/cpuinfo)" in
+    *GenuineIntel*) UCODE=intel-ucode ;;
+    *AuthenticAMD*) UCODE=amd-ucode ;;
+    *) UCODE="" ;;
+esac
+
 echo "==> Instalando pacotes básicos"
 sudo pacman -S --needed --noconfirm \
     stow hyprland waybar wofi swaync kitty zsh starship neovim yazi zathura jq tlp \
-    networkmanager iwd pipewire pipewire-pulse pipewire-alsa wireplumber \
     bluez bluez-utils polkit hyprpolkitagent \
-    xdg-desktop-portal xdg-desktop-portal-hyprland upower \
-    linux-firmware "$UCODE" \
+    linux-firmware ${UCODE:+"$UCODE"} \
     ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-nerd-fonts-symbols \
     grim slurp wf-recorder hyprsunset brightnessctl playerctl wl-clipboard
 
@@ -27,15 +31,9 @@ else
 fi
 
 if $WITH_APPS; then
-    echo "==> Habilitando repositório multilib (necessário para Steam)"
-    if ! grep -q '^\[multilib\]' /etc/pacman.conf; then
-        sudo sed -i '/^#\[multilib\]/,/^#Include/s/^#//' /etc/pacman.conf
-        sudo pacman -Sy
-    fi
-
     echo "==> Instalando aplicativos de uso pessoal"
     sudo pacman -S --needed --noconfirm \
-        firefox firefox-i18n-pt-br discord steam mpv dolphin pavucontrol \
+        firefox firefox-i18n-pt-br discord mpv dolphin pavucontrol \
         blueman network-manager-applet godot-mono \
         dotnet-sdk dotnet-sdk-9.0 aspnet-runtime typst tinymist \
         htop imagemagick
