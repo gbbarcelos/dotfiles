@@ -25,18 +25,17 @@ sudo systemctl enable --now NetworkManager.service iwd.service bluetooth.service
 
 if command -v yay &>/dev/null; then
     echo "==> Instalando pacotes que são pelo AUR"
-    yay -S --needed --noconfirm visual-studio-code-bin wayfreeze
+    yay -S --needed --noconfirm wayfreeze
 else
-    echo "!! yay não encontrado — instale manualmente: visual-studio-code-bin, wayfreeze"
+    echo "!! yay não encontrado — instale manualmente: wayfreeze"
 fi
 
 if $WITH_APPS; then
     echo "==> Instalando aplicativos de uso pessoal"
     sudo pacman -S --needed --noconfirm \
         firefox firefox-i18n-pt-br discord mpv dolphin pavucontrol \
-        blueman network-manager-applet godot-mono \
+        blueman network-manager-applet godot-mono imagemagick \
         dotnet-sdk dotnet-sdk-9.0 aspnet-runtime typst tinymist \
-        htop imagemagick
 fi
 
 echo "==> Criando symlinks com stow"

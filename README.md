@@ -3,9 +3,10 @@
 Configurações do meu SO de Arch Linux e Hyprland para notebook, com condições específicas para economia de energia e visualização detalhada da bateria e pastas estruturadas como pacotes do [GNU Stow](https://www.gnu.org/software/stow/) para uso de symlinks.
 Contém, também, um arquivo para instalação automática de todas as aplicações e configurações do sistema. Para maior conveniência, especifiquei tudo abaixo, além de instruções para instalação manual. Ao final, independentemente de qual instalação for escolhida, certifique-se de trocar o caminho de algumas coisas, como dos wallpapers.
 
-![pré-visualização do setup](imgs/screenshot_2026-09-22_12-18-32.png)
-![pré-visualização do setup](imgs/screenshot_2026-09-22_12-23-16.png)
-![pré-visualização do setup](imgs/screenshot_2026-09-22_12-26-02.png)
+![pré-visualização do setup](imgs/captura_de_tela(1).png)
+![pré-visualização do setup](imgs/captura_de_tela(2).png)
+![pré-visualização do setup](imgs/captura_de_tela(3).png)
+![pré-visualização do setup](imgs/captura_de_tela(4).png)
 
 ## Programas configurados
 
@@ -20,12 +21,10 @@ Contém, também, um arquivo para instalação automática de todas as aplicaç�
 | `.zprofile/` | Zsh (login) | `.zprofile` inicia o Hyprland automaticamente sem a tela de login |
 | `starship/` | Starship | Prompt do shell (`starship.toml`) |
 | `nvim/` | Neovim | Editor baseado no [LazyVim](https://www.lazyvim.org/) (`lua/config/`, `lua/plugins/`). Explorer do `snacks.nvim` com largura fixa de 28 colunas (`plugins/explorer.lua`) |
-| `code/` | VS Code | `settings.json` |
 | `yazi/` | Yazi | Gerenciador de arquivos no terminal (`yazi.toml`, `theme.toml`, `keymap.toml`, `package.toml`) |
 | `zathura/` | Zathura | Visualizador de PDF (`zathurarc`) |
 | `wifi-manager/` | wifi-manager | Gerenciador de Wi-Fi (`config.toml`, `style.css`) |
 | `scripts/` | Scripts específicos | `screenshot.sh` (captura de tela/gravação) e `yazi_flutuante.sh` (Yazi flutuante via Hyprland) |
-| `mimeapps/` | XDG MIME | `mimeapps.list` para associações padrão de aplicativo por tipo de arquivo |
 
 ## Programas essenciais do sistema (sem configuração versionada)
 
@@ -56,7 +55,6 @@ Instalados na máquina e usados no dia a dia, mas sem configuração versionada 
 | `godot-mono` | Desenvolvimento | Engine de jogos Godot (build com suporte a C#) |
 | `dotnet-sdk`, `dotnet-sdk-9.0`, `aspnet-runtime` | Desenvolvimento | SDKs .NET/ASP.NET |
 | `typst`, `tinymist` | Documentos | Compilador de documentos Typst |
-| `htop` | Sistema | Monitor de processos no terminal |
 | `imagemagick` | Imagens | Manipulação de imagens via linha de comando (importante pro Yazi!) |
 
 ## Instalação
@@ -80,7 +78,7 @@ sudo pacman -S --needed \
     bluez bluez-utils polkit hyprpolkitagent \
     ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-nerd-fonts-symbols \
     grim slurp wf-recorder hyprsunset brightnessctl playerctl wl-clipboard
-yay -S --needed visual-studio-code-bin wayfreeze
+yay -S --needed wayfreeze
 sudo systemctl enable --now NetworkManager.service iwd.service bluetooth.service upower.service
 ```
 
@@ -94,7 +92,7 @@ cd ~/dotfiles
 ### 3. Criar os symlinks com Stow
 
 ```bash
-stow -t ~ code hypr kitty mimeapps nvim scripts starship swaync waybar wifi-manager wofi yazi zathura zshrc .zprofile
+stow -t ~ hypr kitty nvim scripts starship swaync waybar wifi-manager wofi yazi zathura zshrc .zprofile
 ```
 
 ### 4. Tornar os scripts executáveis
