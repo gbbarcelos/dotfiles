@@ -1,6 +1,0 @@
-{
-    "editor.fontWeight": "bold",
-    "terminal.integrated.fontWeightBold": "bold",
-    "git.enableSmartCommit": true,
-    "workbench.colorTheme": "Catppuccin Mocha"
-}
