@@ -28,7 +28,7 @@ sudo pacman -S --needed \
     bluez bluez-utils hyprpolkitagent \
     ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-nerd-fonts-symbols \
     grim slurp wf-recorder hyprsunset wl-clipboard
-yay -S --needed wayfreeze
+yay -S --needed wayfreeze wlogout orbit-wifi
 ```
 
 ### 2. Clonar o repositório
@@ -41,7 +41,7 @@ cd ~/dotfiles
 ### 3. Criar os symlinks com Stow
 
 ```bash
-stow -t ~ hypr kitty nvim scripts starship swaync waybar wofi yazi zathura zshrc
+stow -t ~ hypr kitty nvim scripts starship swaync waybar wlogout wofi yazi zathura zshrc
 ```
 
 ### 4. Tornar os scripts executáveis

@@ -4,7 +4,7 @@ WITH_APPS=false
 [[ "${1:-}" == "--apps" ]] && WITH_APPS=true
 
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PACKAGES=(hypr kitty nvim scripts starship swaync waybar wofi yazi zathura zshrc)
+PACKAGES=(hypr kitty nvim scripts starship swaync waybar wlogout wofi yazi zathura zshrc)
 
 sudo pacman -S --needed --noconfirm \
   stow hyprland waybar wofi swaync kitty zsh starship neovim yazi zathura jq tlp \
@@ -12,7 +12,7 @@ sudo pacman -S --needed --noconfirm \
   ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-nerd-fonts-symbols \
   pavucontrol blueman network-manager-applet imagemagick \
   grim slurp wf-recorder hyprsunset
-yay -S --needed --noconfirm wayfreeze
+yay -S --needed --noconfirm wayfreeze wlogout orbit-wifi
 
 cd "$DOTFILES_DIR"
 stow -t "$HOME" "${PACKAGES[@]}"
