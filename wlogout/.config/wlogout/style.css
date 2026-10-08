@@ -1,0 +1,76 @@
+@import "colors.css";
+
+* {
+  background-image: none;
+}
+
+window {
+  background-color: @backdrop;
+}
+
+button {
+  background-color: @surface;
+  color: @text;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
+  outline-style: none;
+  border: 1px solid @border;
+
+  margin: 0 4px;
+  padding: 1.2rem 2rem;
+
+  background-repeat: no-repeat;
+  background-position: center 40%;
+  background-size: 30%;
+  text-shadow: none;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    background-size 0.2s ease;
+}
+
+button:focus {
+  border-color: @hover-border;
+}
+
+button:hover {
+  background-color: @hover-bg;
+  border-color: @hover-border;
+  background-size: 35%;
+}
+
+#shutdown:hover {
+  background-color: @power-hover-bg;
+  border-color: @power-border;
+}
+
+#suspend {
+  padding: 1rem;
+  background-image: image(url("./icons/sleep.png"));
+  border-radius: 16px;
+}
+
+#reboot {
+  padding: 1.3rem;
+  background-image: image(url("./icons/restart.png"));
+  border-radius: 16px;
+}
+
+#shutdown {
+  padding: 0.7rem;
+  background-image: image(url("./icons/power.png"));
+  border-radius: 16px;
+}
+
+#logout {
+  padding: 1.3rem;
+  background-image: image(url("./icons/logout.png"));
+  border-radius: 16px 70px 70px 16px;
+}
+
+#hibernate {
+  padding: 0.8rem;
+  background-image: image(url("./icons/hibernate.png"));
+  border-radius: 70px 16px 16px 70px;
+}

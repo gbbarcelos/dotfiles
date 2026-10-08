@@ -1,0 +1,8 @@
+@define-color text           #c6cde2;
+@define-color backdrop       rgba(13, 14, 22, 0.55);
+@define-color surface        rgba(26, 28, 44, 0.45);
+@define-color border         rgba(122, 162, 247, 0.15);
+@define-color hover-bg       rgba(122, 162, 247, 0.18);
+@define-color hover-border   rgba(122, 162, 247, 0.40);
+@define-color power-hover-bg rgba(247, 118, 142, 0.20);
+@define-color power-border   rgba(247, 118, 142, 0.45);
