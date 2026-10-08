@@ -41,7 +41,7 @@ cd ~/dotfiles
 ### 3. Criar os symlinks com Stow
 
 ```bash
-stow -t ~ hypr kitty nvim scripts starship swaync waybar wifi-manager wofi yazi zathura zshrc
+stow -t ~ hypr kitty nvim scripts starship swaync waybar wofi yazi zathura zshrc
 ```
 
 ### 4. Tornar os scripts executáveis

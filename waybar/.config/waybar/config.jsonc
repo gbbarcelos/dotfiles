@@ -53,6 +53,7 @@
         }
     },
     "network": {
+        "on-click": "orbit toggle top-right --tab wifi",
         "format-wifi": "{essid} {icon}",
         "format-ethernet": "{ipaddr}/{cidr}   ",
         "format-disconnected": "",
@@ -66,11 +67,10 @@
         "tooltip-format-wifi": "{ifname}  {signalStrength}%",
         "tooltip-format-ethernet": "{ifname} via {gwaddr}  ",
         "tooltip-format-disconnected": "Desconectado",
-        "interval": 5,
-        "on-click": "wifi-manager --toggle"
+        "interval": 5
     },
     "bluetooth": {
-        "on-click": "wifi-manager --toggle",
+        "on-click": "orbit toggle top-right --tab bluetooth",
         "format-off": "󰂲",
         "format-on": "󰂯",
         "format-disabled": "",
