@@ -48,7 +48,7 @@ button:hover {
 #suspend {
   padding: 1rem;
   background-image: image(url("./icons/sleep.png"));
-  border-radius: 16px;
+  border-radius: 70px 16px 16px 70px;
 }
 
 #reboot {
@@ -67,10 +67,4 @@ button:hover {
   padding: 1.3rem;
   background-image: image(url("./icons/logout.png"));
   border-radius: 16px 70px 70px 16px;
-}
-
-#hibernate {
-  padding: 0.8rem;
-  background-image: image(url("./icons/hibernate.png"));
-  border-radius: 70px 16px 16px 70px;
 }

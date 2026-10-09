@@ -1,11 +1,4 @@
 {
-    "label": "hibernate",
-    "action": "systemctl hibernate",
-    "text": "Hibernar",
-    "keybind": "h"
-}
-
-{
     "label": "suspend",
     "action": "systemctl suspend",
     "text": "Suspender",
