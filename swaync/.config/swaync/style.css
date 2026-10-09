@@ -1,197 +1,165 @@
-swaync style.css * {
-  all: unset;
-  font-family: 'JetBrainsMono Nerd Font', 'CodeNewRoman Nerd Font Mono', monospace;
-  font-size: 14px;
-  box-sizing: border-box;
+/* Base oficial do swaync (GTK4); aqui só sobrescrevemos o necessário */
+@import url("file:///etc/xdg/swaync/style.css");
+
+/* Paleta Tokyo Night, igual à waybar */
+:root {
+  --cc-bg: rgba(13, 14, 22, 0.72);
+  --noti-border-color: rgba(122, 162, 247, 0.14);
+  --noti-bg: 26, 28, 44;
+  --noti-bg-alpha: 0.45;
+  --noti-bg-darker: rgba(13, 14, 22, 0.40);
+  --noti-bg-hover: rgba(122, 162, 247, 0.08);
+  --noti-bg-focus: rgba(122, 162, 247, 0.06);
+  --noti-close-bg: rgba(198, 205, 226, 0.08);
+  --noti-close-bg-hover: rgba(247, 118, 142, 0.18);
+  --text-color: #c6cde2;
+  --text-color-disabled: rgba(198, 205, 226, 0.45);
+  --bg-selected: #7aa2f7;
+  --border-radius: 10px;
+  --notification-shadow: none;
+  --notification-icon-size: 48px;
+  --font-size-body: 12px;
+  --font-size-summary: 13px;
 }
 
+* {
+  font-family: 'JetBrainsMono Nerd Font', 'Noto Sans', monospace;
+}
+
+/* Control center */
 .control-center {
-  background-color: rgba(13, 14, 22, 0.72);
+  background: var(--cc-bg);
   border: 1px solid rgba(122, 162, 247, 0.15);
   border-radius: 11px;
-  padding: 8px;
-  min-width: 340px;
-  max-width: 380px;
 }
 
-.control-center-list {
-  padding: 4px 0;
+.control-center .control-center-list-placeholder {
+  color: rgba(198, 205, 226, 0.45);
 }
 
-.top-action-buttons {
-  margin: 6px 8px 4px;
-  padding: 0;
-}
-
-.top-action-buttons button,
-.control-center button {
-  color: rgba(198, 205, 226, 0.55);
-  font-size: 12px;
+/* Notificações sempre translúcidas, sem sombra nem fundo opaco */
+.notification-row .notification-background {
   padding: 4px 8px;
-  border-radius: 6px;
-  transition: background-color 0.12s ease, color 0.12s ease;
 }
 
-.top-action-buttons button:hover,
-.control-center button:hover {
-  background-color: rgba(122, 162, 247, 0.10);
-  color: #c6cde2;
+.notification-row .notification-background .notification {
+  background: rgba(var(--noti-bg), var(--noti-bg-alpha));
+  border: 1px solid var(--noti-border-color);
+  box-shadow: none;
 }
 
-.control-center-dnd label {
-  color: rgba(198, 205, 226, 0.55);
-  font-size: 12px;
-}
-
-.control-center-dnd switch {
-  border-radius: 20px;
-  background-color: rgba(26, 28, 44, 0.80);
-  border: 1px solid rgba(122, 162, 247, 0.20);
-  min-width: 38px;
-  min-height: 20px;
-}
-
-.control-center-dnd switch:checked {
-  background-color: rgba(247, 118, 142, 0.25);
+.notification-row .notification-background .notification.critical {
   border-color: rgba(247, 118, 142, 0.40);
 }
 
-.control-center-dnd switch slider {
-  background-color: #7aa2f7;
-  border-radius: 50%;
-  min-width: 16px;
-  min-height: 16px;
-  margin: 2px;
+.notification-row .notification-background .notification .notification-default-action:hover {
+  background: var(--noti-bg-hover);
 }
 
-.control-center-dnd switch:checked slider {
-  background-color: #f7768e;
+.notification-group,
+.notification-group:focus,
+.notification-row:focus {
+  background: transparent;
 }
 
-.notification-row {
-  margin: 0 4px 6px;
+.notification-group.collapsed .notification-row .notification {
+  background: rgba(var(--noti-bg), var(--noti-bg-alpha));
 }
 
-.notification {
-  background-color: rgba(26, 28, 44, 0.60);
-  border: 1px solid rgba(122, 162, 247, 0.12);
-  border-radius: 8px;
-  padding: 10px 12px;
-  transition: background-color 0.12s ease;
+.notification-group.collapsed:hover .notification-row:not(:only-child) .notification {
+  background: rgba(var(--noti-bg), 0.65);
 }
 
-.notification:hover {
-  background-color: rgba(26, 28, 44, 0.80);
-  border-color: rgba(122, 162, 247, 0.22);
+.notification-group .notification-group-buttons,
+.notification-group .notification-group-headers {
+  margin: 0 12px;
 }
 
-.notification-content {
-  padding: 0;
-}
-
-.app-name {
-  color: #bb9af7;
-  font-size: 11px;
-  margin-bottom: 3px;
-}
-
-.summary {
-  color: #c6cde2;
-  font-size: 13px;
+.text-box .summary {
   font-weight: 600;
 }
 
-.body {
-  color: rgba(198, 205, 226, 0.60);
-  font-size: 12px;
-  margin-top: 2px;
-}
-
-.time {
-  color: rgba(198, 205, 226, 0.35);
-  font-size: 10px;
-  margin-top: 4px;
-}
-
-.notification-action-button {
+.text-box .body {
   color: rgba(198, 205, 226, 0.65);
-  font-size: 11px;
-  padding: 4px 10px;
-  margin-top: 6px;
-  border-radius: 6px;
-  border: 1px solid rgba(122, 162, 247, 0.15);
-  background-color: rgba(122, 162, 247, 0.06);
-  transition: background-color 0.12s ease;
 }
 
-.notification-action-button:hover {
-  background-color: rgba(122, 162, 247, 0.14);
-  color: #c6cde2;
+.text-box .time {
+  color: rgba(198, 205, 226, 0.40);
+  font-size: 10px;
 }
 
 .close-button {
-  color: rgba(198, 205, 226, 0.35);
-  font-size: 12px;
-  border-radius: 4px;
-  padding: 2px 5px;
-  transition: color 0.12s ease, background-color 0.12s ease;
+  min-width: 20px;
+  min-height: 20px;
+  margin-top: 6px;
+  margin-right: 6px;
 }
 
 .close-button:hover {
   color: #f7768e;
-  background-color: rgba(247, 118, 142, 0.12);
 }
 
-.notification-group-collapsed-summary {
-  background-color: rgba(122, 162, 247, 0.10);
-  border: 1px solid rgba(122, 162, 247, 0.20);
-  border-radius: 8px;
-  padding: 6px 12px;
-  margin: 0 4px 4px;
-  color: #7aa2f7;
-  font-size: 11px;
+.notification-row .notification-background .notification .notification-default-action .notification-content {
+  padding: 8px 10px;
 }
 
-.notification-group-collapsed-summary:hover {
-  background-color: rgba(122, 162, 247, 0.16);
+/* Popups flutuantes */
+.floating-notifications .notification-row .notification-background {
+  padding: 10px 10px 0 0;
 }
 
-.notification-group>.notification-row:nth-child(n+3) {
-  /* empilha visualmente com deslocamento, sem esconder */
-  margin-top: -6px;
-  opacity: 0.70;
-  transform: scale(0.97);
-}
-
-.notification-group>.notification-row:nth-child(n+4) {
-  margin-top: -8px;
-  opacity: 0.45;
-  transform: scale(0.94);
-}
-
-.notification-group>.notification-row:nth-child(n+5) {
-  opacity: 0;
-  margin: 0;
-  min-height: 0;
-  padding: 0;
-  pointer-events: none;
-}
-
-.notification-popup {
-  background-color: rgba(13, 14, 22, 0.76);
+.floating-notifications .notification {
+  background: rgba(13, 14, 22, 0.76);
   border: 1px solid rgba(122, 162, 247, 0.18);
-  border-radius: 10px;
-  padding: 12px 14px;
-  /* compacto, sem expandir demais */
-  min-width: 280px;
-  max-width: 360px;
-  margin: 8px;
 }
 
-.notification-popup .stack-label {
-  color: #7aa2f7;
-  font-size: 10px;
-  margin-top: 6px;
-  padding-top: 6px;
-  border-top: 1px solid rgba(122, 162, 247, 0.10);
+/* Widgets */
+.widget {
+  margin: 4px 8px;
+  padding: 6px 8px;
+}
+
+.widget-title > label {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.widget-title > button,
+.widget-inhibitors > button {
+  background: rgba(122, 162, 247, 0.08);
+  border: 1px solid rgba(122, 162, 247, 0.15);
+  color: rgba(198, 205, 226, 0.70);
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.widget-title > button:hover,
+.widget-inhibitors > button:hover {
+  background: rgba(247, 118, 142, 0.14);
+  color: #f7768e;
+}
+
+.widget-dnd label {
+  font-size: 1rem;
+}
+
+.widget-dnd switch {
+  background: rgba(26, 28, 44, 0.80);
+  border: 1px solid rgba(122, 162, 247, 0.20);
+  border-radius: 20px;
+}
+
+.widget-dnd switch:checked {
+  background: rgba(247, 118, 142, 0.25);
+  border-color: rgba(247, 118, 142, 0.40);
+}
+
+.widget-dnd switch slider {
+  background: #7aa2f7;
+  border-radius: 50%;
+}
+
+.widget-dnd switch:checked slider {
+  background: #f7768e;
 }

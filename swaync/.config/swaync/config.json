@@ -1,0 +1,59 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "ignore-gtk-theme": true,
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-layer": "top",
+  "layer-shell": true,
+  "layer-shell-cover-screen": true,
+  "cssPriority": "user",
+  "control-center-margin-top": 10,
+  "control-center-margin-bottom": 10,
+  "control-center-margin-right": 10,
+  "control-center-margin-left": 0,
+  "notification-2fa-action": true,
+  "notification-inline-replies": false,
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 200,
+  "timeout": 10,
+  "timeout-low": 5,
+  "timeout-critical": 0,
+  "fit-to-screen": true,
+  "relative-timestamps": true,
+  "control-center-width": 440,
+  "control-center-height": 560,
+  "notification-window-width": 440,
+  "keyboard-shortcuts": true,
+  "notification-grouping": true,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": true,
+  "text-empty": "Nenhuma notificação",
+  "script-fail-notify": true,
+  "widgets": [
+    "inhibitors",
+    "title",
+    "dnd",
+    "notifications"
+  ],
+  "widget-config": {
+    "notifications": {
+      "vexpand": true
+    },
+    "inhibitors": {
+      "text": "Inibidores",
+      "button-text": "Limpar tudo",
+      "clear-all-button": true
+    },
+    "title": {
+      "text": "Notificações",
+      "clear-all-button": true,
+      "button-text": "Limpar tudo"
+    },
+    "dnd": {
+      "text": "Não perturbe"
+    }
+  }
+}
