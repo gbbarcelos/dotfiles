@@ -114,7 +114,8 @@
                 ""
             ]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pkill -x wiremix || kitty --class wiremix -e wiremix",
+        "on-click-right": "pavucontrol"
     },
     "battery": {
         "states": {

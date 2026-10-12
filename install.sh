@@ -10,7 +10,7 @@ sudo pacman -S --needed --noconfirm \
   stow hyprland waybar wofi swaync kitty zsh starship neovim yazi zathura jq tlp \
   bluez-utils hyprpolkitagent \
   ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-nerd-fonts-symbols \
-  pavucontrol blueman network-manager-applet imagemagick \
+  pavucontrol wiremix blueman network-manager-applet imagemagick \
   grim slurp wf-recorder hyprsunset
 yay -S --needed --noconfirm wayfreeze wlogout orbit-wifi
 

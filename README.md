@@ -25,7 +25,7 @@ O script instala os pacotes, cria os symlinks via stow, define o Zsh como shell 
 ```bash
 sudo pacman -S --needed \
     hyprland waybar wofi swaync kitty zsh starship neovim yazi zathura jq tlp \
-    bluez bluez-utils hyprpolkitagent \
+    bluez bluez-utils hyprpolkitagent wiremix \
     ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-nerd-fonts-symbols \
     grim slurp wf-recorder hyprsunset wl-clipboard
 yay -S --needed wayfreeze wlogout orbit-wifi
