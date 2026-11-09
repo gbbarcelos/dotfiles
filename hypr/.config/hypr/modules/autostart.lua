@@ -1,0 +1,13 @@
+local v = require("modules.vars")
+
+hl.on("hyprland.start", function()
+    hl.exec_cmd("hyprlock")
+    hl.exec_cmd("waybar")
+    hl.exec_cmd("hyprsunset")
+    hl.exec_cmd("swaync")
+    hl.exec_cmd("hypridle")
+    hl.exec_cmd("hyprpolkitagent")
+    hl.exec_cmd("swaybg -i " .. v.wallpaper .. " -m fill")
+    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+    hl.exec_cmd("orbit daemon")
+end)
