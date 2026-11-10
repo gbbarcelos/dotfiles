@@ -2,6 +2,12 @@ hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 
+local local_bin = os.getenv("HOME") .. "/.local/bin"
+local path = os.getenv("PATH") or ""
+if not path:find(local_bin, 1, true) then
+    hl.env("PATH", local_bin .. ":" .. path)
+end
+
 hl.env("WLR_NO_HARDWARE_CURSORS", "1")
 hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Classic")
 hl.env("HYPRCURSOR_SIZE", "24")

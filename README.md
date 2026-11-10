@@ -24,7 +24,7 @@ O script instala os pacotes, cria os symlinks via stow e define o Zsh como shell
 
 ```bash
 sudo pacman -S --needed \
-    hyprland waybar wofi swaync kitty zsh starship neovim yazi zathura jq \
+    hyprland waybar wofi swaync kitty zsh starship neovim yazi zathura jq ttf-jetbrains-mono \
     bluez bluez-utils hyprpolkitagent wiremix \
     ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-nerd-fonts-symbols \
     grim slurp wf-recorder hyprsunset wl-clipboard
@@ -41,7 +41,7 @@ cd ~/dotfiles
 ### 3. Criar os symlinks com Stow
 
 ```bash
-stow -t ~ hypr kitty nvim scripts starship swaync waybar wlogout wofi yazi zathura zshrc
+stow -t ~ applications hypr kitty nvim numbr scripts starship swaync waybar wlogout wofi yazi zathura zshrc
 ```
 
 ### 4. Tornar os scripts executáveis

@@ -5,6 +5,5 @@ return {
   fileManager = "kitty -e yazi",
   menu        = "wofi --show drun",
   swaync      = "swaync-client -t -sw",
-  wallpaper   = "~/Imagens/Wallpapers/8kckwj.jpg",
-  print       = "~/dotfiles/scripts/.config/scripts/screenshot.sh",
+  wallpaper   = "~/Imagens/Wallpapers/wh1.jpg",
 }

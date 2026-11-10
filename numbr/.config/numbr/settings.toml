@@ -1,0 +1,7 @@
+font_size = 16.0
+font_family = "JetBrainsMono"
+font_weight = "Normal"
+
+[background]
+color = "#0d0e16"
+transparency = 0.88

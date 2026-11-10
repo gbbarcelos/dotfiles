@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=numbr
+GenericName=Calculadora
+Comment=Calculadora em linguagem natural
+Exec=numbr
+Icon=accessories-calculator
+Terminal=false
+Categories=Utility;Calculator;
+Keywords=calculadora;calculator;calc;conta;
+StartupWMClass=numbr
