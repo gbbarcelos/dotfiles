@@ -18,13 +18,13 @@ cd ~/dotfiles
 ./install.sh
 ```
 
-O script instala os pacotes, cria os symlinks via stow, define o Zsh como shell padrão e habilita o TLP. Os passos abaixo são o que ele executa, para quem preferir rodar manualmente ou adaptar.
+O script instala os pacotes, cria os symlinks via stow e define o Zsh como shell padrão. Os passos abaixo são o que ele executa, para quem preferir rodar manualmente ou adaptar.
 
 ### 1. Instalar os pacotes
 
 ```bash
 sudo pacman -S --needed \
-    hyprland waybar wofi swaync kitty zsh starship neovim yazi zathura jq tlp \
+    hyprland waybar wofi swaync kitty zsh starship neovim yazi zathura jq \
     bluez bluez-utils hyprpolkitagent wiremix \
     ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-nerd-fonts-symbols \
     grim slurp wf-recorder hyprsunset wl-clipboard
@@ -56,13 +56,3 @@ chmod +x ~/.config/scripts/*.sh
 chsh -s $(which zsh)
 ```
 
-### 6. Configurar o TLP (gerenciamento de energia)
-
-> Caso use desktop, apenas pule esta etapa.
-
-```bash
-sudo systemctl enable tlp.service
-sudo systemctl start tlp.service
-sudo systemctl disable systemd-rfkill.service systemd-rfkill.socket
-sudo tlp start
-```

@@ -34,8 +34,6 @@ window#waybar {
 #wireplumber,
 #tray,
 #network,
-#battery,
-#backlight,
 #custom-swaync,
 #idle_inhibitor,
 #custom-nightlight {
@@ -46,8 +44,6 @@ window#waybar {
 
 #wireplumber:hover,
 #network:hover,
-#battery:hover,
-#backlight:hover,
 #custom-swaync:hover,
 #idle_inhibitor:hover,
 #custom-nightlight:hover { background: @hover-bg; border: 1px solid rgba(198, 205, 226, 0.14); }
@@ -55,11 +51,6 @@ window#waybar {
 #custom-swaync.notification { color: @accent; }
 #custom-swaync.dnd-notification,
 #custom-swaync.dnd-none { color: @text-dim; }
-
-#battery.charging { color: @text; }
-#battery.warning:not(.charging) { color: @yellow; }
-#battery.critical:not(.charging) { color: @red; animation: blink 1s linear infinite alternate; }
-#battery.full { color: @text; }
 
 #network.disconnected { color: @text-dim; }
 

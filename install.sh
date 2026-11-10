@@ -7,10 +7,10 @@ DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PACKAGES=(hypr kitty nvim scripts starship swaync waybar wlogout wofi yazi zathura zshrc)
 
 sudo pacman -S --needed --noconfirm \
-  stow hyprland waybar wofi swaync kitty zsh starship neovim yazi zathura jq tlp \
+  stow hyprland waybar wofi swaync kitty zsh starship neovim yazi zathura jq \
   bluez-utils hyprpolkitagent \
   ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-nerd-fonts-symbols \
-  pavucontrol wiremix blueman network-manager-applet imagemagick \
+  pavucontrol wiremix blueman imagemagick \
   grim slurp wf-recorder hyprsunset
 yay -S --needed --noconfirm wayfreeze wlogout orbit-wifi
 
@@ -22,8 +22,5 @@ chmod +x "$HOME"/.config/scripts/*.sh
 if [[ "$SHELL" != *zsh ]]; then
   chsh -s "$(command -v zsh)"
 fi
-
-sudo systemctl enable --now tlp.service
-sudo systemctl disable systemd-rfkill.service systemd-rfkill.socket 2>/dev/null || true
 
 echo "==> Prontinho <3 reinicie o sistema"
