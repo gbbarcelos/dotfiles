@@ -108,10 +108,10 @@ truncation_symbol = "…/"
 [directory.substitutions]
 "Documentos" = "󰈙 "
 "Downloads" = " "
-"Música" = "󰝚 "
+"Músicas" = "󰝚 "
 "Imagens" = " "
 "Vídeos" = "󰕧 "
-"Developer" = "󰲋 "
+"Projetos" = " "
 
 [git_branch]
 symbol = ""
