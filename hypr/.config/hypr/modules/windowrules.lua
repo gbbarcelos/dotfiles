@@ -18,6 +18,7 @@ local layers = {
     { "swaync-control-center", 0.2 },
     { "swaync-notification-window", 0.2 },
     { "logout_dialog", 0 },
+    { "shotdock", 0 },
 }
 for _, l in ipairs(layers) do
     hl.layer_rule({ match = { namespace = l[1] }, blur = true, ignore_alpha = l[2] })

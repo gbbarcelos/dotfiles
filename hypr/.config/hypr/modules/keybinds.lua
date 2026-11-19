@@ -16,11 +16,8 @@ hl.bind(mod .. " + N",         exec("kitty nvim"))
 hl.bind(mod .. " + SHIFT + R", exec("pkill waybar; setsid waybar"))
 
 -- Prints e gravação de tela
-hl.bind("Print",                 exec(v.print .. " full"))
-hl.bind("SHIFT + Print",         exec(v.print .. " region"))
-hl.bind("SUPER + Print",         exec(v.print .. " rec-full"))
-hl.bind("SUPER + SHIFT + Print", exec(v.print .. " rec-region"))
-hl.bind("SUPER + X",             exec(v.print .. " stop-rec"))
+hl.bind("Print",         exec("shotdock -a --freeze"))
+hl.bind("SHIFT + Print", exec("shotdock --record-area"))
 
 -- Foco, troca e redimensionamento de janelas
 for _, dir in ipairs({ "left", "right", "up", "down" }) do
