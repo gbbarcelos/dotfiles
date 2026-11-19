@@ -4,7 +4,7 @@ WITH_APPS=false
 [[ "${1:-}" == "--apps" ]] && WITH_APPS=true
 
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PACKAGES=(applications hypr kitty nvim numbr scripts starship swaync waybar wlogout wofi yazi zathura zshrc)
+PACKAGES=(applications hypr kitty nvim numbr scripts shotdock starship swaync waybar wlogout wofi xkb yazi zathura zshrc)
 
 sudo pacman -S --needed --noconfirm \
   stow hyprland waybar wofi swaync kitty zsh starship neovim yazi zathura jq ttf-jetbrains-mono \

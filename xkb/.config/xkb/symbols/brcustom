@@ -1,0 +1,9 @@
+// ABNT2 + símbolos nas teclas F10, F11 e F12 (substitui o PowerToys)
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+    include "br(abnt2)"
+    name[Group1] = "Portuguese (Brazil, ABNT2 custom)";
+    key <FK10> { [ backslash, backslash ] };
+    key <FK11> { [ emdash,    emdash    ] };
+    key <FK12> { [ bar,       bar       ] };
+};
