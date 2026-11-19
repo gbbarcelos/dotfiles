@@ -1,0 +1,16 @@
+[General]
+ShowFullPath=true
+Version=202
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,directorythumbnail,ebookthumbnail,gsthumbnail,imagethumbnail,jpegthumbnail,mobithumbnail,opendocumentthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs
+
+[UiSettings]
+ColorScheme=TokyoNight
