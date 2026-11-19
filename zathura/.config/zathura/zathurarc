@@ -10,7 +10,7 @@ set recolor 'true'
 set recolor-keephue 'false'
 set recolor-reverse-video 'false'
 
-set default-bg '#262630'
+set default-bg 'rgba(38,38,48,0.85)'
 set completion-fg '#dee2d3'
 set completion-bg '#171110'
 set completion-group-fg '#828D6E'
