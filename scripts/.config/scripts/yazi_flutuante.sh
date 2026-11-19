@@ -7,8 +7,9 @@ done
 
 count=$(hyprctl activeworkspace -j | jq '.windows')
 
+# Workspace vazio: abre flutuante (regra da classe yazi-float em windowrules.lua)
 if [[ "$count" -eq 0 ]]; then
-    hyprctl dispatch exec "[float; center; size 1200 750] kitty --title yazi yazi"
+    exec kitty --class yazi-float --title yazi yazi
 else
-    hyprctl dispatch exec "kitty --title yazi yazi"
+    exec kitty --title yazi yazi
 fi
