@@ -5,6 +5,7 @@ local exec = hl.dsp.exec_cmd
 hl.bind(mod .. " + Q", exec(v.terminal))
 hl.bind(mod .. " + E", exec("~/dotfiles/scripts/.config/scripts/yazi_flutuante.sh"))
 hl.bind(mod .. " + W", exec(v.menu))
+hl.bind(mod .. " + SPACE", exec("~/Applications/Handy.AppImage --toggle-transcription"))
 hl.bind(mod .. " + S", exec(v.swaync))
 hl.bind(mod .. " + B", exec("hyprlock"))
 hl.bind(mod .. " + A", hl.dsp.window.close())
