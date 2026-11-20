@@ -11,6 +11,3 @@ MenuBar=Disabled
 
 [PreviewSettings]
 Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,directorythumbnail,ebookthumbnail,gsthumbnail,imagethumbnail,jpegthumbnail,mobithumbnail,opendocumentthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs
-
-[UiSettings]
-ColorScheme=TokyoNight
