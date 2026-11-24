@@ -13,7 +13,7 @@ sudo pacman -S --needed --noconfirm \
   pavucontrol wiremix blueman imagemagick \
   grim slurp wf-recorder hyprsunset \
   dolphin papirus-icon-theme
-yay -S --needed --noconfirm wayfreeze wlogout orbit-wifi qt6ct-kde darkly
+yay -S --needed --noconfirm wayfreeze wlogout orbit-wifi qt6ct-kde darkly xdg-desktop-portal-termfilechooser
 
 cd "$DOTFILES_DIR"
 stow -t "$HOME" "${PACKAGES[@]}"

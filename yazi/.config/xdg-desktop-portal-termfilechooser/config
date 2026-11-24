@@ -1,0 +1,8 @@
+[filechooser]
+cmd=yazi-wrapper.sh
+default_dir=$HOME
+env=TERMCMD='kitty --class yazi-float'
+
+; suggested, default ou last
+open_mode=suggested
+save_mode=suggested
